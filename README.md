@@ -6,9 +6,22 @@ incentivises the 'Punk HODL'. Furthermore, the longer the vesting period, the mo
 
 
 ## Prerequisites
-The deployement of the contract requires the Punk token contract to be deployed as well as the Punk NFT contract.
-The Punk tokenn contract can be found here: https://github.com/xDaiPunks/PunkTokenContract
+The deployment of the contract requires the Punk token contract to be deployed as well as the Punk NFT contract.
+The Punk token contract can be found here: https://github.com/xDaiPunks/PunkTokenContract
 A flattened version of the NFT contract can be found here: https://github.com/xDaiPunks/xDaiPunksNFT
+
+The contract addresses of the Punk token contract and the Punks NFT contract are needed for the deployment of the contract.
+
+The deployment variables:
+- @param _start: unix time of the start of $PNK vesting
+- @param _cliff: delayed start of $PNK vesting in seconds
+- @param _duration: timespan of $PNK vesting in seconds
+- @param _totalAvailable: total available supply of the $PNK token
+- @param _Punk: contract address of the $PNK ERC20 contract
+- @param _Punks: interface of the Punks NFT contract
+
+Note: if you are using remix and ganache you will need to fund the contract before the claims can be executed
+Funding is 100.000.000
 
 ## Truffle
 The vesting contract has been created using Truffle and OpenZeppelin 
