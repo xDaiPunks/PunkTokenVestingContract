@@ -12,7 +12,7 @@
  *                                                                                            \▓▓    ▓▓
  *                                                                                             \▓▓▓▓▓▓
  *
- * $PNK VESTING
+ * $PUNK VESTING
  *
  */
 
@@ -46,7 +46,7 @@ import "../Interface/IPunks.sol";
 
 /**
  * @title PunkVesting
- * @dev The vesting contract that makes the $PNK token claimable in a linear fashion based the Punks NFT contract.
+ * @dev The vesting contract that makes the $PUNK token claimable in a linear fashion based the Punks NFT contract.
  * Vesting is based on block.timestamp and the vesting timespan. Claims are dependent on the Punks that are owned
  * by a particular address
  */
@@ -56,7 +56,7 @@ contract PunkVesting is Ownable, ReentrancyGuard {
     using SafeERC20 for IERC20;
 
     /**
-     * @dev Claim event for $PNK. Based on single NFT
+     * @dev Claim event for $PUNK. Based on single NFT
      */
     event ClaimedPunkToken(
         address owner,
@@ -66,7 +66,7 @@ contract PunkVesting is Ownable, ReentrancyGuard {
     );
 
     /**
-     * @dev Claim event for $PNK. Based on single array of NFTs
+     * @dev Claim event for $PUNK. Based on single array of NFTs
      */
     event ClaimedPunkTokens(
         address owner,
@@ -90,11 +90,11 @@ contract PunkVesting is Ownable, ReentrancyGuard {
     /**
      * @dev Sets the values for {duration}, {cliff}, {start}, {totalAvailable}, {punkAvailable}, {Punk} and {Punks}.
      *
-     * @param _start: unix time of the start of $PNK vesting
-     * @param _cliff: delayed start of $PNK vesting in seconds
-     * @param _duration: timespan of $PNK vesting in seconds
-     * @param _totalAvailable: total available supply of the $PNK token
-     * @param _Punk: contract address of the $PNK ERC20 contract
+     * @param _start: unix time of the start of $PUNK vesting
+     * @param _cliff: delayed start of $PUNK vesting in seconds
+     * @param _duration: timespan of $PUNK vesting in seconds
+     * @param _totalAvailable: total available supply of the $PUNK token
+     * @param _Punk: contract address of the $PUNK ERC20 contract
      * @param _Punks: interface of the Punks NFT contract
      */
     constructor(
@@ -117,11 +117,11 @@ contract PunkVesting is Ownable, ReentrancyGuard {
     }
 
     /**
-     * @dev Claims the $PNK tokens available for claim for the msg.sender.
+     * @dev Claims the $PUNK tokens available for claim for the msg.sender.
      *
      * Claim is a linear devision of the claimable amount and vesting timespan
      * Claim is per owned NFT
-     * Claim also claims the unclaimed $PNK
+     * Claim also claims the unclaimed $PUNK
      */
     function claim() external nonReentrant {
         uint256 tokenId;
@@ -179,11 +179,11 @@ contract PunkVesting is Ownable, ReentrancyGuard {
     }
 
     /**
-     * @dev Claims the $PNK tokens available for an individual NFT
+     * @dev Claims the $PUNK tokens available for an individual NFT
      *
      * Claim is a linear devision of the claimable amount and vesting timespan
      * Claim is per owned NFT
-     * Claim also claims the unclaimed $PNK
+     * Claim also claims the unclaimed $PUNK
      */
     function claimPunk(uint256 tokenId) external nonReentrant {
         uint256 claimed;
@@ -226,7 +226,7 @@ contract PunkVesting is Ownable, ReentrancyGuard {
      *
      * Claim is a linear devision of the claimable amount and vesting timespan
      * Claim is per owned NFT
-     * Claim also claims the unclaimed $PNK
+     * Claim also claims the unclaimed $PUNK
      */
     function claimAvailable(address owner) public view returns (uint256) {
         uint256 tokenId;
@@ -276,7 +276,7 @@ contract PunkVesting is Ownable, ReentrancyGuard {
      *
      * Claim is a linear devision of the claimable amount and vesting timespan
      * Claim is per owned NFT
-     * Claim also claims the unclaimed $PNK
+     * Claim also claims the unclaimed $PUNK
      */
     function claimAvailablePunk(uint256 tokenId) public view returns (uint256) {
         uint256 claimed;

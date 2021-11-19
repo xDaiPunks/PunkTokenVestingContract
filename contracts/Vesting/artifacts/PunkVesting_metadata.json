@@ -325,38 +325,38 @@
 			}
 		],
 		"devdoc": {
-			"details": "The vesting contract that makes the $PNK token claimable in a linear fashion based the Punks NFT contract. Vesting is based on block.timestamp and the vesting timespan. Claims are dependent on the Punks that are owned by a particular address",
+			"details": "The vesting contract that makes the $PUNK token claimable in a linear fashion based the Punks NFT contract. Vesting is based on block.timestamp and the vesting timespan. Claims are dependent on the Punks that are owned by a particular address",
 			"events": {
 				"ClaimedPunkToken(address,uint256,uint256,uint256)": {
-					"details": "Claim event for $PNK. Based on single NFT"
+					"details": "Claim event for $PUNK. Based on single NFT"
 				},
 				"ClaimedPunkTokens(address,uint256,uint256[],uint256[])": {
-					"details": "Claim event for $PNK. Based on single array of NFTs"
+					"details": "Claim event for $PUNK. Based on single array of NFTs"
 				}
 			},
 			"kind": "dev",
 			"methods": {
 				"claim()": {
-					"details": "Claims the $PNK tokens available for claim for the msg.sender. Claim is a linear devision of the claimable amount and vesting timespan Claim is per owned NFT Claim also claims the unclaimed $PNK"
+					"details": "Claims the $PUNK tokens available for claim for the msg.sender. Claim is a linear devision of the claimable amount and vesting timespan Claim is per owned NFT Claim also claims the unclaimed $PUNK"
 				},
 				"claimAvailable(address)": {
-					"details": "Gets the total claim available of an address Claim is a linear devision of the claimable amount and vesting timespan Claim is per owned NFT Claim also claims the unclaimed $PNK"
+					"details": "Gets the total claim available of an address Claim is a linear devision of the claimable amount and vesting timespan Claim is per owned NFT Claim also claims the unclaimed $PUNK"
 				},
 				"claimAvailablePunk(uint256)": {
-					"details": "Gets the total claim available of an individual NFT Claim is a linear devision of the claimable amount and vesting timespan Claim is per owned NFT Claim also claims the unclaimed $PNK"
+					"details": "Gets the total claim available of an individual NFT Claim is a linear devision of the claimable amount and vesting timespan Claim is per owned NFT Claim also claims the unclaimed $PUNK"
 				},
 				"claimPunk(uint256)": {
-					"details": "Claims the $PNK tokens available for an individual NFT Claim is a linear devision of the claimable amount and vesting timespan Claim is per owned NFT Claim also claims the unclaimed $PNK"
+					"details": "Claims the $PUNK tokens available for an individual NFT Claim is a linear devision of the claimable amount and vesting timespan Claim is per owned NFT Claim also claims the unclaimed $PUNK"
 				},
 				"constructor": {
 					"details": "Sets the values for {duration}, {cliff}, {start}, {totalAvailable}, {punkAvailable}, {Punk} and {Punks}.",
 					"params": {
-						"_Punk": ": contract address of the $PNK ERC20 contract",
+						"_Punk": ": contract address of the $PUNK ERC20 contract",
 						"_Punks": ": interface of the Punks NFT contract",
-						"_cliff": ": delayed start of $PNK vesting in seconds",
-						"_duration": ": timespan of $PNK vesting in seconds",
-						"_start": ": unix time of the start of $PNK vesting",
-						"_totalAvailable": ": total available supply of the $PNK token"
+						"_cliff": ": delayed start of $PUNK vesting in seconds",
+						"_duration": ": timespan of $PUNK vesting in seconds",
+						"_start": ": unix time of the start of $PUNK vesting",
+						"_totalAvailable": ": total available supply of the $PUNK token"
 					}
 				},
 				"owner()": {
